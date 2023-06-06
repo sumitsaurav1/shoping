@@ -60,8 +60,15 @@ function upadteUserDetails(){
         email.value="";
         password.value="";
         conpassword.value="";
-        verifyText.innerText="Successfully Singned up";
+        verifyText.innerText="Successfully Singned up,Redirecting you to login Page";
         verifyText.style.color="green"
+        setTimeout(()=>{
+            let link = document.createElement("a");
+            link.href="./login.html";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+       },3000)
     }else{
        //alert("user exits")
        verifyText.innerText="User Exits, Redirecting you to login Page"
